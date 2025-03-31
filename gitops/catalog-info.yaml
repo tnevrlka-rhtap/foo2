@@ -1,0 +1,20 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: foo2-gitops
+  description: This is GitOps manifest for foo2   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=foo2
+    backstage.io/kubernetes-id: foo2 
+    backstage.io/techdocs-ref: dir:.   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:foo2
