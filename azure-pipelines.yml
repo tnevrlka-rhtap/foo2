@@ -10,6 +10,9 @@ container:
   image: quay.io/redhat-appstudio/rhtap-task-runner:latest
   options: --privileged
 
+variables:
+- group: tnevrlka-variables
+
 steps:
   - bash: |
       echo "• init"
